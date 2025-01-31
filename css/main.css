@@ -120,19 +120,7 @@ body {
 	transition: var(--transition);
 	will-change: transform;
 }
-.hero_link {
-	text-decoration-line: none;
-	text-align: center;
-	margin-right: 5px;   /* уменьшили расстояние друг от друга */
-	font-size: 30px;
-	color: azure;
-	transition: color 0.3s;
-	font-style: normal;
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.hero_link:hover {
-	color: #4facfe;
-}
+
 .content {
 	will-change: transform;
 }
@@ -143,38 +131,92 @@ body {
 	font-size: calc(var(--index) * .75);
 	letter-spacing: calc(var(--index) / 37.5);
 }
+/* Стили для таблицы */
 .skills-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  background-color: rgba(44, 62, 80, 0.5); /* Тёмный фон с 50% прозрачностью */
-  color: #ecf0f1; /* Светлый цвет текста */
+    width: 100%;
+    border-collapse: collapse;
+   background-color: rgba(128, 128, 128, 0.1); /* Серый нейтральный цвет с 10% непрозрачности */
+    border-radius: 10px; /* Закругленные углы */
+    overflow: hidden; /* Скрываем содержимое, выходящее за пределы скругленных углов */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень для объема */
+    color: #ffffff; /* Белый текст */
+    transform: scale(1); 
+    transform-origin: top center; /* Указываем точку преобразования */
+
 }
 
-.skills-table th, .skills-table td {
-  border: 1px solid rgba(52, 73, 94, 0.5); /* Тёмные границы с 50% прозрачностью */
-  padding: 10px;
-  text-align: left;
-}
-
+/* Стили для заголовков таблицы */
 .skills-table th {
-  background-color: rgba(52, 73, 94, 0.5); /* Тёмный фон для заголовков с 50% прозрачностью */
-  font-weight: bold;
-  color: #ecf0f1; /* Светлый цвет текста */
+    background-color: rgba(255, 255, 255, 0.2); /* Полупрозрачный фон для заголовков */
+    padding: 9.5px; /* Уменьшили отступы */
+    text-align: left;
+    font-size: 9px; /* Уменьшили размер шрифта */
+    font-weight: bold;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Граница между заголовком и содержимым */
 }
 
-.skills-table td ul {
-  margin: 0;
-  padding-left: 20px;
+/* Стили для ячеек таблицы */
+.skills-table td {
+    padding: 9.5px; /* Уменьшили отступы */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Граница между строками */
 }
 
-.skills-table td ul li {
-  margin-bottom: 5px;
+/* Стили для последней строки (убираем границу) */
+.skills-table tr:last-child td {
+    border-bottom: none;
 }
 
+/* Стили для списков внутри таблицы */
+.skills-table ul {
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0;
+    margin: 0;
+}
+
+.skills-table ul li {
+
+    font-size: 9px; /* Уменьшили размер шрифта */
+}
+
+/* Эффект при наведении на строку */
 .skills-table tr:hover {
-  background-color: rgba(59, 74, 92, 0.5); /* Тёмный фон при наведении с 50% прозрачностью */
+    background-color: rgba(255, 255, 255, 0.05); /* Легкое выделение строки */
+    transition: background-color 0.3s ease; /* Плавный переход */
+}
+/* Стили для контейнера иконок */
+.social-icons {
+    position: relative;
+    z-index: 10; /* Иконки поверх таблицы */
+    margin-top: 20px; /* Отступ от таблицы */
+}
+
+/* Стили для иконок */
+.hero_link {
+    text-decoration-line: none;
+    text-align: center;
+    margin-right: 10px;
+    font-size: 40px;
+    color: #ffffff;
+    transition: color 0.3s;
+    font-style: normal;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: inline-block;
+    padding: 10px;
+    pointer-events: auto; /* Разрешаем клики */
+}
+
+.hero_link i {
+    color: inherit;
+    font-size: inherit;
+    font-family: 'boxicons' !important;
+}
+
+.hero_link:hover {
+    color: #c0c0c0;
+}
+
+.hero_link:hover i {
+    color: inherit;
 }
 
 
@@ -182,26 +224,26 @@ body {
 /* Медиа-запрос для мобильных устройств iPhone SE и выше */
 @media screen and (max-width: 375px) {
 	.hero_link {
-		font-size: 18px;
-	}
+        font-size: 30px; /* Уменьшаем размер иконок для мобильных устройств */
+    }
 
-	.main-article__header {
-		font-size: calc(var(--index) * 1.5);
-		letter-spacing: calc(var(--index) / 9);
-		text-align: center; /* Центрирование текста по горизонтали */
-	}
+    .main-article__header {
+        font-size: calc(var(--index) * 1.5);
+        letter-spacing: calc(var(--index) / 9);
+        text-align: center; /* Центрирование текста по горизонтали */
+    }
 
-	.main-article__paragraph {
-		max-width: calc(var(--index) * 26);
-		font-size: calc(var(--index) * 0.8);
-		margin-top: calc(var(--index) / 1.5);
-		text-align: center; /* Центрирование текста по горизонтали */
-	}
+    .main-article__paragraph {
+        max-width: calc(var(--index) * 26);
+        font-size: calc(var(--index) * 0.8);
+        margin-top: calc(var(--index) / 1.5);
+        text-align: center; /* Центрирование текста по горизонтали */
+    }
 
-	.copy {
-		bottom: calc(var(--index) * 2);
-		font-size: calc(var(--index) * 0.7);
-		letter-spacing: calc(var(--index) / 50);
-		text-align: center; /* Центрирование текста по горизонтали */
-	}
+    .copy {
+        bottom: calc(var(--index) * 2);
+        font-size: calc(var(--index) * 0.7);
+        letter-spacing: calc(var(--index) / 50);
+        text-align: center; /* Центрирование текста по горизонтали */
+    }
 }
