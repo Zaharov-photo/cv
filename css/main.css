@@ -118,6 +118,7 @@ body {
 	margin-top: calc(var(--index) / 1.25);
 	transform: var(--main-article-transform);
 	transition: var(--transition);
+	transform-origin: top center;
 	will-change: transform;
 }
 
