@@ -135,7 +135,7 @@ body {
 .skills-table {
     width: 100%;
     border-collapse: collapse;
-   background-color: rgba(128, 128, 128, 0.1); /* Серый нейтральный цвет с 10% непрозрачности */
+   background-color: rgba(128, 128, 128, 0.2); /* Серый нейтральный цвет с 20% непрозрачности */
     border-radius: 10px; /* Закругленные углы */
     overflow: hidden; /* Скрываем содержимое, выходящее за пределы скругленных углов */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень для объема */
@@ -149,8 +149,8 @@ body {
 .skills-table th {
     background-color: rgba(255, 255, 255, 0.2); /* Полупрозрачный фон для заголовков */
     padding: 9.5px; /* Уменьшили отступы */
-    text-align: left;
-    font-size: 9px; /* Уменьшили размер шрифта */
+    text-align: top center;
+    font-size: 11px; /* Уменьшили размер шрифта */
     font-weight: bold;
     border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Граница между заголовком и содержимым */
 }
@@ -175,7 +175,7 @@ body {
 
 .skills-table ul li {
 
-    font-size: 9px; /* Уменьшили размер шрифта */
+    font-size: 13px; /* Уменьшили размер шрифта */
 }
 
 /* Эффект при наведении на строку */
